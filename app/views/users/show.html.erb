@@ -1,0 +1,9 @@
+<h1>Welcome, <%= @user.username %> </h1>
+
+<ul>
+  <% current_user.blogs.each do |blog| %>
+    <li> <%= blog.title %> | <%= blog.description %> <%= button_to 'Edit', edit_blog_path(blog.id), method: :get  %>
+         <%= button_to 'view', blog_path(blog.id), method: :get %>
+    </li>
+  <% end %>
+</ul>

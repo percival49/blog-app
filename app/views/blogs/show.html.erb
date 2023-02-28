@@ -1,0 +1,11 @@
+<h1> <%= @blog.title %> </h1>
+<p> <%= @blog.description %> </p>
+
+<% if current_user.blogs.where(id: params[:id])[0]  %>
+  <%= button_to :edit, edit_blog_path(params[:id]), method: :get %>
+<% end %>
+
+<br/>
+
+<%= render 'comments/comment_form', parameters: params %>
+<%= render 'comments/comments', comments: @comments %>

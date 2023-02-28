@@ -1,0 +1,11 @@
+<h1>List of blogs</h1>
+
+<%= button_to 'Create blog', new_blog_path, method: :get  %>
+
+<ul>
+  <% @blogs.each do |blog| %>
+    <li> <%= blog.title %> by: <%= blog.user.username %> <%= button_to 'view', blog_path(blog.id), method: :get %> </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @blogs %>

@@ -1,0 +1,5 @@
+<%= form_with model: @comment, url: blog_comment_path(parameters[:id]) do |f| %>
+  <%= f.text_area :body, placeholder: 'Write a comment...' %>
+
+  <%= f.submit 'Send' %>
+<% end %>
